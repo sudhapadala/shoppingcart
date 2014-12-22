@@ -1,0 +1,126 @@
+#container
+{
+	
+background-color:white;	
+}
+#itemsincart
+{
+margin-left: 18px;
+margin-top: -54px;
+color: green;
+font-size: 24px;	
+}
+.ribbon h6
+{
+	float: right;
+font-family: cursive;
+float:right;
+font-size: 15px;
+border: 3px dashed red;
+}
+
+#header
+{
+font-family: cursive;
+color: coral;
+font-size: 19px;
+}
+#htext
+{
+float:left;	
+}
+#cart
+{
+	clear:both;
+	float:right;
+	
+}
+
+#cart h6
+{
+	margin-left:22px;
+	margin-top:-40px;
+	color:green;
+	font-size:16px;
+	
+	
+}
+
+#cart img
+{
+float:right;
+width:47px;
+margin-top:-60px;	
+}
+#up
+{
+	background-color:black;
+	height:23px;
+}
+#colortext
+{
+	background-color:#589d3e;
+	height: 21px;
+/* float: left; */
+width: 174px;
+}
+#lr
+{display:inline;
+}
+#one
+{
+
+float:left;
+margin-right:30px;	
+}
+#two 
+{
+float:left;
+margin-right:30px; 	
+}
+#three 
+{
+
+float:left;
+margin-right:30px;	
+}
+#four
+{
+	
+	margin-right:30px;
+}
+#ImageBound
+{
+	border: 1px dashed black;
+	width:66%;
+	margin-left:140px;
+}
+
+#image
+{
+float:left;	
+}
+#quantity
+{
+float:left;	
+}
+
+#total
+{
+	border: 1px dashed black;
+}
+
+#dispalyimage
+{
+border:1px solid black;	
+}
+#dispalyimage p
+{
+	display:inline;
+	margin-right:10px;
+}
+
+#CartDisplay
+{
+display:none;position:absolute;top:106px;left:52%;width:618px;margin:10px;border:1px solid #1e1851;background:#FFFFFF;	
+}

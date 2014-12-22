@@ -1,0 +1,285 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="theme.css">
+<script>
+var sum=new Array();
+var totalvalue;
+var count = 1;
+var quantitytotal=0;
+
+function addtocart(rate,quantity,idimage)
+{
+	
+	//var rate=document.getElementById("ratee").innerHTML;
+	//var quantity=document.getElementById("quantityvalue").value;
+	//alert(quantity);
+	
+	  //quantitytotal=0;
+	var divimage = document.createElement('div');
+      divimage.id = "dispalyimage";
+	  
+	   var summ=rate*quantity;
+	  //var x=document.getElementById("idimage);
+	  //var x=idimage.src;
+	  var img1=document.createElement('img');
+	  img1.src=idimage;
+	  var btn=document.createElement("BUTTON");
+     var t=document.createTextNode("REMOVE FROM CART");
+     btn.appendChild(t);
+	 btn.onclick = function() { 
+	 
+	 
+	    var elem = document.getElementById(x);
+	  
+        elem.parentNode.removeChild(elem);
+		//appendtotal();
+		totalvalue=totalvalue-summ;
+		for(var i=0;i<sum.length;i++)
+		{
+		  if(sum[i]==summ)
+		  {
+			sum.splice(i,1);  
+		  }
+		}
+		quantitytotal--;
+		document.getElementById("totalsum").innerHTML=totalvalue;
+		document.getElementById('itemsincart').innerHTML=quantitytotal;
+		
+
+        
+      
+	  }
+	  
+	  divimage.appendChild(img1);
+	  
+	  
+	  
+	  
+	  
+	var div = document.createElement('div');
+	     var x = "dispaly"+count;
+		  div.id= x;
+	  var para = document.createElement("p");
+     var node = document.createTextNode("Price");
+      para.appendChild(node);
+	  
+	  var rated = document.createElement("p");
+	  rated.innerHTML=rate;
+	  
+	  var paraa = document.createElement("p");
+     var nodee = document.createTextNode("Quantity");
+      paraa.appendChild(nodee);
+	  
+	  var quantityy = document.createElement("p");
+	  quantityy.innerHTML=quantity;
+	  
+	  var t=document.createElement("p");
+	  var tt=document.createTextNode("Total");
+	  t.appendChild(tt);
+	  
+	  var ttt = document.createElement("p");
+	  ttt.innerHTML=rate*quantity;;
+	  
+	  div.appendChild(divimage);
+	  divimage.appendChild(para);
+	  divimage.appendChild(rated);
+	 divimage.appendChild(paraa);
+	  divimage.appendChild(quantityy);
+	  divimage.appendChild(t);
+	  divimage.appendChild(ttt);
+	  divimage.appendChild(btn);
+	  calculatesum(summ);
+	  quantitytotal++;
+	  
+	  document.getElementById('itemsincart').innerHTML=quantitytotal;
+	  CartDisplay.appendChild(div);
+	  count++;
+	
+	
+}
+
+
+function calculatesum(q)
+{
+	//alert(q);
+	totalvalue=0;
+	sum[sum.length]=q;
+	//alert(sum);
+	
+	for(i=0;i<sum.length;i++)
+	{
+		totalvalue=totalvalue+sum[i];
+	}
+	//alert(totalvalue);
+	document.getElementById("totalsum").innerHTML=totalvalue;
+	
+}
+
+function toggle() {
+	
+	var ele = document.getElementById("CartDisplay");
+	//var text = document.getElementById("displayText");
+	if(ele.style.display == "block") {
+    	ele.style.display = "none";
+		//text.innerHTML = "show";
+  	}
+	else {
+		ele.style.display = "block";
+		//text.innerHTML = "hide";
+	}
+} 
+
+</script>
+
+</head>
+
+<body>
+<div id="container">
+<div id="up">
+<div id="colortext">
+</div><!--end of colortext-->
+</div><!--end of up-->
+<div id="header">
+<div id="htext">
+<h3>SHOPPING ON CHOICE</h3>
+</div><!--end of htext-->
+<div id="cart">
+<a id="displayText" href="javascript:toggle();"><img src="images/cart.jpg" /></a>
+<p id="itemsincart">o</p>
+</div><!--end of cart-->
+</div><!--end of header-->
+<div id="ContentsDisplay" style="margin-top:91px;">
+<HR />
+<div id="ImageBound">
+<div id="one">
+<img src="images/1.jpg" id="imageone" />
+
+<div id="buttondispaly">
+
+<div id="imagerate">
+<div id="image">
+<img src="images/rs.jpg"  style="width:12px;"/>
+</div><!--end of image-->
+<div id="rate">
+<p id="ratee">1250</p>
+</div><!--end of rate-->
+<div id="quantity">
+<select id="quantityvalue">
+<option value="">quantity</option>
+  <option value="1">1</option>
+  <option value="2">2</option>
+  <option value="3">3</option>
+  
+</select>
+
+</div><!--end of quantity-->
+
+</div><!--end of imagerate-->
+<input type="button" value="ADD" onclick="addtocart(document.getElementById('ratee').innerHTML,document.getElementById('quantityvalue').value,document.getElementById('imageone').src)"  />
+ <input type="button" value="BUY" />
+ </div><!--end of buttondisplay-->
+ </div><!--end of 1-->
+
+<div id="two">
+<img src="images/2.jpg"  id="imagetwo"/>
+
+<div id="buttondispaly">
+
+<div id="imagerate">
+<div id="image">
+<img src="images/rs.jpg"  style="width:12px;"/>
+</div><!--end of image-->
+<div id="rate">
+<p id="ratee2">2250</p>
+</div><!--end of rate-->
+
+<div id="quantity">
+<select id="quantityvalue2">
+<option value="">quantity</option>
+  <option value="1">1</option>
+  <option value="2">2</option>
+  <option value="3">3</option>
+  
+</select>
+
+</div><!--end of quantity-->
+
+</div><!--end of imagerate-->
+<input type="button" value="ADD" onclick="addtocart(document.getElementById('ratee2').innerHTML,document.getElementById('quantityvalue2').value,document.getElementById('imagetwo').src)"  />
+ <input type="button" value="BUY" />
+ </div><!--end of buttondisplay-->
+ </div><!--end of 2-->
+ 
+<div id="three">
+<img src="images/3.jpg" id="imagethree"/>
+
+<div id="buttondispaly">
+
+<div id="imagerate">
+<div id="image">
+<img src="images/rs.jpg"  style="width:12px;"/>
+</div><!--end of image-->
+<div id="rate">
+<p id="ratee3">3250</p>
+</div><!--end of rate-->
+<div id="quantity">
+<select id="quantityvalue3">
+<option value="">quantity</option>
+  <option value="1">1</option>
+  <option value="2">2</option>
+  <option value="3">3</option>
+  
+</select>
+
+</div><!--end of quantity-->
+</div><!--end of imagerate-->
+<input type="button" value="ADD" onclick="addtocart(document.getElementById('ratee3').innerHTML,document.getElementById('quantityvalue3').value,document.getElementById('imagethree').src)"  />
+ <input type="button" value="BUY" />
+ </div><!--end of buttondisplay-->
+ </div><!--end of 3-->
+ 
+ 
+ <div id="four">
+<img src="images/4.jpg" id="imagefour" />
+
+<div id="buttondispaly">
+
+<div id="imagerate">
+<div id="image">
+<img src="images/rs.jpg"  style="width:12px;"/>
+</div><!--end of image-->
+<div id="rate">
+<p id="ratee4">4250</p>
+</div><!--end of rate-->
+<div id="quantity">
+<select id="quantityvalue4">
+<option value="">quantity</option>
+  <option value="1">1</option>
+  <option value="2">2</option>
+  <option value="3">3</option>
+  
+</select>
+</div><!--end of quantity-->
+</div><!--end of imagerate-->
+<input type="button" value="ADD" onclick="addtocart(document.getElementById('ratee4').innerHTML,document.getElementById('quantityvalue4').value,document.getElementById('imagefour').src)"  />
+ <input type="button" value="BUY" />
+ </div><!--end of buttondisplay-->
+ </div><!--end of 4-->
+ 
+ </div><!--end off imagebound-->
+ 
+ 
+<HR />
+</div><!--end of contentsdiaplay-->
+
+<div id="CartDisplay">
+<h3> YOUR CART DETAILS</h3>
+<p id="total" >TOTAL:<span id="totalsum">0</span></p>
+
+</div>
+
+
+</div><!--end of container-->
+</body>
+</html>
