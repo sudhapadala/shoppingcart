@@ -1,3 +1,3 @@
 shoppingcart
 ============
- Will be added later on.
+Shopping cart implemented with javascript and jquery
